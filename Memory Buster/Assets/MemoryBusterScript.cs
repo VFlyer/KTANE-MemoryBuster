@@ -47,6 +47,8 @@ public class MemoryBusterScript : MonoBehaviour {
     private List<String> stage4ButtonInfo = new List<String>();
     private List<String> stage5ButtonInfo = new List<String>();
     private List<String> displayInfo = new List<String>();
+
+    string[] sounds = { "stage 1", "stage 2", "stage 3", "stage 4", "stage 5", "solve"};
     /*
      * INFO KEY:
      * E.G: 1R1R
@@ -157,7 +159,7 @@ public class MemoryBusterScript : MonoBehaviour {
         buttonSelectables[index].AddInteractionPunch();
         if (ModuleSolved || animating)
             return;
-        Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, buttonSelectables[index].transform); //PLACEHOLDER SOUND
+        Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, buttonSelectables[index].transform);
 
         String check = "";
         switch (stage)
@@ -1832,10 +1834,12 @@ public class MemoryBusterScript : MonoBehaviour {
             pressedButtons.Add(logged);
             Debug.LogFormat("[Memory Buster #{0}] Correctly pressed: position {1}, button color {2}, label {3}, label color {4}", ModuleId, (index + 1), rndButtonColorStrings[index], labels[index].text, rndLabelColorStrings[index]);
             Debug.LogFormat("[Memory Buster #{0}] Logged: {1}", ModuleId, logged);
+            Audio.PlaySoundAtTransform(sounds[stage - 1], display.transform);
         }
         else
         {
             SolveAnim();
+            Audio.PlaySoundAtTransform(sounds[5], display.transform);
         }
     }
     void GenerateButtons() {
