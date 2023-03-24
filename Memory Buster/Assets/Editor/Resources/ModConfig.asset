@@ -16,10 +16,10 @@ MonoBehaviour:
   author: cerulean
   description: "It\u2019s even more so of a Memory Buster than the original.\n\nPress
     six colored buttons while remembering every aspect of each stage.\n\nManual (HTML):
-    coming soon\nManual (PDF): coming soon (can also be found in your manuals folder)\n\nIf
-    you encounter any bugs, ping @igster!#6242 in the #mod-bug-reports channel on
-    the KTaNE Discord Server.\n\nThis manual was written by McNiko67. Thank you for
-    your hard work."
+    https://ktane.timwi.de/HTML/Memory%20Buster.html\nManual (PDF): https://ktane.timwi.de/PDF/Memory%20Buster.pdf
+    (can also be found in your manuals folder)\n\nIf you encounter any bugs, ping
+    @igster!#6242 in the #mod-bug-reports channel on the KTaNE Discord Server.\n\nThis
+    manual was written by McNiko67. Thank you for your hard work."
   version: 1.0
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 4bac218a166de5f4d9e10a866ae882a3, type: 3}
