@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using UnityEngine;
 using KModkit;
+using UnityEngine;
 using Rnd = UnityEngine.Random;
 
 public class MemoryBusterScript : MonoBehaviour {
@@ -1944,4 +1944,22 @@ public class MemoryBusterScript : MonoBehaviour {
         displayInfo.Add(displayColorStr);
         Debug.LogFormat("[Memory Buster #{0}] Stage {1} display color is: {2}", ModuleId, stage, displayColorStr);
     }
+
+#pragma warning disable 414
+    private readonly string TwitchHelpMessage = @"Use '!{0} <1/2/3/4>' to press that button.";
+#pragma warning restore 414
+
+    string[] buttonNumbers = new string[] { "1", "2", "3", "4" };
+
+    private IEnumerator ProcessTwitchCommand(string command) {
+        command = command.Trim();
+
+        if (!buttonNumbers.Contains(command)) {
+            yield return "sendtochaterror Invalid command.";
+        }
+
+        yield return null;
+        buttonSelectables[int.Parse(command) - 1].OnInteract();
+    }
+
 }
