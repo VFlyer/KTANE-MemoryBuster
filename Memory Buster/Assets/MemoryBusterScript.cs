@@ -1946,7 +1946,7 @@ public class MemoryBusterScript : MonoBehaviour {
     }
 
 #pragma warning disable 414
-    private readonly string TwitchHelpMessage = @"Use '!{0} <1/2/3/4>' to press that button.";
+    private readonly string TwitchHelpMessage = @"Use '!{0} <1/2/3/4>' to press the button in that position from left to right.";
 #pragma warning restore 414
 
     string[] buttonNumbers = new string[] { "1", "2", "3", "4" };
