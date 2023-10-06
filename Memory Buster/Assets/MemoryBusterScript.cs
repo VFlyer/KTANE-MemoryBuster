@@ -1746,12 +1746,14 @@ public class MemoryBusterScript : MonoBehaviour {
     void NewStage() {
         clickDelay = 64;
         stage++;
-        Debug.LogFormat("[Memory Buster #{0}] Proceeding to stage {1}.", ModuleId, stage);
-        GenerateButtons();
-        GenerateLabelColors();
-        GenerateLabelTexts();
-        GenerateDisplay();
-        RememberInfo();
+        if (stage < 7) {
+            Debug.LogFormat("[Memory Buster #{0}] Proceeding to stage {1}.", ModuleId, stage);
+            GenerateButtons();
+            GenerateLabelColors();
+            GenerateLabelTexts();
+            GenerateDisplay();
+            RememberInfo();
+        }
         StageAnim();
     }
     void StageAnim()
@@ -1762,8 +1764,8 @@ public class MemoryBusterScript : MonoBehaviour {
         else
             animFrameMax = 25;
         animating = true;
-        for (int i = 0; i < stage; i++)
-            stageLights[i].material = lit;
+        for (int i = 0; i < stageLights.Length; i++)
+            stageLights[i].material = i < stage ? lit : unlit;
     }
     void SolveAnim()
     {
