@@ -1958,6 +1958,7 @@ public class MemoryBusterScript : MonoBehaviour {
 
         if (!buttonNumbers.Contains(command)) {
             yield return "sendtochaterror Invalid command.";
+            yield break;
         }
 
         yield return null;
