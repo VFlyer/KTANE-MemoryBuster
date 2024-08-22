@@ -70,7 +70,7 @@ public class MemoryBusterRewriteScript : MonoBehaviour {
 				new[] { "P1", "L4", "B2", "T2", "P3", "L4", },
 				new[] { "LS1", "BL4S1", "P1", "B3", "PS1", "PT3S1", },
 				new[] { "TS1", "BL4S1", "BS2", "AS1", "AS2", "AS2", },
-				new[] { "LT3S3", "PB3S3", "BS3", "P3", "LS3", "L3", },
+				new[] { "LT3S3", "PB3S3", "BS3", "P3", "TS3", "L3", },
 				new[] { "AS4", "AS2", "L4", "P2", "PS4", "LS2", },
 				new[] { "AS5", "AS3", "AS1", "AS1", "AS5", "AS3", },
 			};
